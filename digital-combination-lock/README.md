@@ -23,9 +23,8 @@ the FSM follows standard Moore machine structure using two separate always block
 * __combination_lock_fsm.v__ - 4-digit Moore FSM with 3-bit state register (S0–S4), password sequence: 13 → 7 → 9 → 1
 
 ## Simulation Results
-3-Password Lock Waveform
-
-4-Password Lock Waveform
+**3-Password Lock Waveform**
+<img width="832" height="363" alt="3_pass_combination" src="https://github.com/user-attachments/assets/7bf03906-a78c-41ec-83a0-d47bb55e79b3" />
 
 ## Implementation
 developed and tested using Xilinx Vivado on the Digilent Zybo Z7-10 FPGA board — the 4-bit switches set the password value in binary, BTN0 acts as Key1, BTN1 as Key2, and all four LEDs light up when the correct sequence is entered
