@@ -27,10 +27,5 @@ the base 6-state cycle runs as follows:
 * __tlcfsm_modified.v__ - extended 8-state FSM (S0–S7) with farmSensor input
 * __tlc_controller_ver2.v__ - top-level controller for the 8-state design, adds a second synchronizer for farmSensor
 
-## Simulation Results
-6-State Controller Waveform
-
-8-State Extended Controller Waveform
-
 ## Implementation
 developed and tested using Xilinx Vivado on the Digilent Zybo Z7-10 FPGA board — LED[3:2] display the highway signal and LED[1:0] display the farm signal, BTN0 is the reset, and BTN1 serves as the farm road sensor input in the extended version
