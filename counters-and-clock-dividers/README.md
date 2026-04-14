@@ -1,32 +1,33 @@
 # Up Counter with Selectable Clock Speed
-a 3-bit synchronous up counter driven by a configurable clock divider, with hardware-selectable frequency and LED output
+a 3-bit synchronous up counter built from half adder primitives, with a clock divider and selectable frequency output
 
 ## Overview
-this project implements a 3-bit up counter built entirely from half adder primitives, paired with a clock divider that generates four distinct clock frequencies from the FPGA's onboard fast clock. a 4-way behavioral mux allows the user to select between clock speeds in real time using the onboard switches, with the count value displayed across the LEDs. push buttons control enable and synchronous reset behavior.
+this project builds a 3-bit up counter from the ground up using half adders as the base primitive. rather than using a built-in counter, the design chains half adders together to compute the next count value combinationally, then latches it on the rising clock edge. a clock divider generates four different frequencies from the board's fast clock, and a behavioral 4-way mux lets you pick between them in real time using the switches — the count shows up across the LEDs
 
 ## Architecture
-the design is broken into the following modules, connected structurally at the top level:
+the design is made up of the following modules connected structurally at the top level:
 
-- **Half Adder:** the fundamental building block — computes a 1-bit sum and carry output
-- **Three-Bit Counter:** chains three half adders to form a full 3-bit ripple counter, computing the next count value combinationally
-- **Up Counter:** wraps the three-bit counter in a sequential always block, latching the sum on the rising clock edge and supporting synchronous reset
-- **Clock Divider:** uses a 27-bit internal counter to divide the fast clock down into four progressively slower frequencies, output as a 4-bit bus
-- **Top Level:** connects all submodules; implements a behavioral 4-way mux to select the active clock speed based on switch input
+* **Half Adder:** computes a 1-bit sum and carry — the base building block for everything else
+* **Three-Bit Counter:** chains three half adders to ripple carry across 3 bits and compute the next count value
+* **Up Counter:** wraps the three-bit counter in a sequential always block, latching on the rising edge with synchronous reset support
+* **Clock Divider:** uses a 27-bit internal counter to divide the fast clock into four progressively slower output frequencies
+* **Top Level:** connects everything and implements a behavioral case-statement mux to route the selected clock to the counter
 
 ## Features
-- 4 selectable clock speeds via onboard switches (SW[1:0])
-- push button enable (BTN0) and synchronous reset (BTN1)
-- count output displayed across 3 LEDs, with carry out on the fourth
-- fully structural design from half adder primitives up to the top level
+* 4 selectable clock speeds controlled by SW[1:0]
+* push button enable (BTN0) and synchronous reset (BTN1)
+* 3-bit count output on LEDs[2:0], carry out on LED[3]
+* fully structural design built entirely from half adder primitives
 
-## Modules
-- **`half_adder.v`** — 1-bit half adder, the base primitive for the counter
-- **`up_counter.v`** — 3-bit synchronous up counter with enable and reset, includes the three-bit counter submodule
-- **`clock_divider.v`** — generates 4 divided clock frequencies from the fast input clock
-- **`top_level.v`** — top-level structural module connecting all components with a 4-way clock mux
+## Modules of this Project
+
+* __half_adder.v__ - 1-bit half adder, base primitive used to build the counter
+* __up_counter.v__ - 3-bit synchronous up counter with enable and reset, includes three-bit counter submodule
+* __clock_divider.v__ - divides fast clock input into 4 selectable output frequencies
+* __top_level.v__ - top-level module wiring everything together with the 4-way clock mux
 
 ## Simulation Results
-waveforms verified correct counting behavior across all four clock speeds, with enable and reset functioning as expected at each clock frequency
+waveforms confirmed correct counting behavior at each clock speed, with enable and reset verified across all frequencies
 
 ## Implementation
-developed and tested using Xilinx Vivado on the Digilent Zybo Z7-10 FPGA board — demonstrates how complex sequential behavior can be built up entirely from simple combinational primitives
+developed and tested using Xilinx Vivado on the Digilent Zybo Z7-10 FPGA board — shows how sequential counting behavior can be built entirely from basic combinational primitives like half adders
