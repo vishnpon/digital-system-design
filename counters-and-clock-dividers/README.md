@@ -29,5 +29,15 @@ the design is made up of the following modules connected structurally at the top
 ## Simulation Results
 waveforms confirmed correct counting behavior at each clock speed, with enable and reset verified across all frequencies
 
+  ## Up Counter
+  <img width="1217" height="223" alt="up_counter" src="https://github.com/user-attachments/assets/978ec899-4bde-4e9b-be13-7ff2d2481ccf" />
+
+  ## No Debounce
+  <img width="1215" height="232" alt="no_debounce" src="https://github.com/user-attachments/assets/00d1386d-b3c4-46fa-8679-4327aab309ac" />
+
+  ## With Debounce
+  <img width="1217" height="190" alt="with_debounce" src="https://github.com/user-attachments/assets/7d4d2c88-39d7-484f-a7cc-d55d08d4ff6c" />
+
+
 ## Implementation
 developed and tested using Xilinx Vivado on the Digilent Zybo Z7-10 FPGA board — shows how sequential counting behavior can be built entirely from basic combinational primitives like half adders
