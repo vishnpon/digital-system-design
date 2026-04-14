@@ -31,9 +31,13 @@ the 16-bit adder uses a two-level structure with four 4-bit blocks, each handled
 * __carry_lookahead_16bit.v__ - top-level structural module for the full 16-bit two-level CLA
 
 ## Simulation Results
-4-bit CLA Waveform
+**4-bit CLA Waveform**
+<img width="1295" height="306" alt="4_bit_cla1" src="https://github.com/user-attachments/assets/4524477c-5701-41fc-9a99-59ba338fcd81" />
+<img width="1291" height="294" alt="4_bit_cla2" src="https://github.com/user-attachments/assets/bc139194-8e42-4f2e-ac9e-9c57b16297c6" />
 
-16-bit CLA Waveform
+**16-bit CLA Waveform**
+<img width="1233" height="233" alt="16_bit_cla1" src="https://github.com/user-attachments/assets/29656855-420a-4fe8-99d2-901ada7bed5a" />
+<img width="1101" height="206" alt="16_bit_cla2" src="https://github.com/user-attachments/assets/7919aa7f-5d1a-4712-a73e-ffac3e85335d" />
 
 ## Implementation
 developed and tested using Xilinx Vivado on the Digilent Zybo Z7-10 FPGA board — demonstrates how parallel carry computation drastically cuts critical path delay compared to the sequential bottlenecking of ripple carry designs
