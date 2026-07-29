@@ -5,7 +5,8 @@
 // comparison against a behavioral A + B + Cin reference. Reports every
 // mismatch with the failing stimulus and prints a PASS/FAIL summary.
 //
-// Simulator: Vivado XSim. Compile as SystemVerilog ($error, $urandom).
+// Simulator: Cadence Xcelium 25.03 (via EDA Playground). Compile as
+// SystemVerilog ($error, $urandom).
 //======================================================================
 
 `timescale 1ns / 1ps

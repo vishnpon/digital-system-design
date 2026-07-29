@@ -32,7 +32,7 @@ Self-checking testbench (tb_cla16.sv): 20,160 vectors across three phases — 32
 
 Result: PASS — 0 failures out of 20,160 vectors.
 
-Simulated with Cadence Xcelium 25.03.
+Simulated with Cadence Xcelium 25.03 (via EDA Playground).
 
 Note: Post-synthesis timing numbers pending Vivado implementation run.
 
@@ -46,4 +46,4 @@ Note: Post-synthesis timing numbers pending Vivado implementation run.
 <img width="1101" height="206" alt="16_bit_cla2" src="https://github.com/user-attachments/assets/7919aa7f-5d1a-4712-a73e-ffac3e85335d" />
 
 ## Implementation
-synthesized and deployed on the Digilent Zybo Z7-10 FPGA board using Xilinx Vivado, with functional verification of the testbench run in Cadence Xcelium — demonstrates how parallel carry computation reduces critical path depth compared to the sequential carry chain of ripple carry designs
+synthesized and deployed on the Digilent Zybo Z7-10 FPGA board using Xilinx Vivado, with functional verification of the testbench run in Cadence Xcelium 25.03 (via EDA Playground) — demonstrates how parallel carry computation reduces critical path depth compared to the sequential carry chain of ripple carry designs

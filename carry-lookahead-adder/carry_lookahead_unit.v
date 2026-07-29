@@ -1,23 +1,9 @@
 `timescale 1ns / 1ps
 `default_nettype none
 //////////////////////////////////////////////////////////////////////////////////
-// Company:
-// Engineer:
-//
-// Create Date: 11/09/2025 07:50:54 PM
-// Design Name:
+// Engineer: Vishnupriya Ponnam
 // Module Name: carry_lookahead_unit
-// Project Name:
-// Target Devices:
-// Tool Versions:
-// Description:
-//
-// Dependencies:
-//
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-//
+// Description: 4-bit carry lookahead logic computing C1-C4 from generates, propagates and C0
 //////////////////////////////////////////////////////////////////////////////////
 
 

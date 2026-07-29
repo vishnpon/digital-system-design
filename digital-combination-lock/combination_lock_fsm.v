@@ -1,23 +1,9 @@
 `timescale 1ns / 1ps
 `default_nettype none
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 11/17/2025 12:33:02 AM
-// Design Name: 
+// Engineer: Vishnupriya Ponnam
 // Module Name: combination_lock_fsm
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
+// Description: Moore FSM 4-entry combination lock unlocking on 13, 7, 9, 1 via Key1/Key2
 //////////////////////////////////////////////////////////////////////////////////
 
 

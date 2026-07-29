@@ -1,23 +1,9 @@
 `timescale 1ns / 1ps
 `default_nettype none
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 11/03/2025 01:04:59 PM
-// Design Name: 
+// Engineer: Vishnupriya Ponnam
 // Module Name: top_level
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
+// Description: ties clock divider, switch-selected clock mux and 3-bit up counter to the LEDs
 //////////////////////////////////////////////////////////////////////////////////
 
 

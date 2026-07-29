@@ -1,23 +1,9 @@
 `timescale 1ns / 1ps
 `default_nettype none
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 11/03/2025 11:26:57 AM
-// Design Name: 
+// Engineer: Vishnupriya Ponnam
 // Module Name: clock_divider
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
+// Description: divides ClkIn with a 27-bit counter and taps four of its bits as slower clocks
 //////////////////////////////////////////////////////////////////////////////////
 
 

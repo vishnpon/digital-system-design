@@ -37,17 +37,20 @@ file mkdir $OUTDIR
 #---------------------------------------------------------------------
 # Source sets
 #
-# IMPORTANT: generate_propagate_unit.v is not a single module. It defines
-# generate_propagate_unit, carry_lookahead_unit, summation_unit AND
-# carry_lookahead_4bit. The standalone carry_lookahead_unit.v and
-# summation_unit.v files in this folder define those same two modules again.
-# Adding both sets is a duplicate-definition error, so only the monolith is
-# listed here.
+# One module per file. generate_propagate_unit.v used to also contain copies of
+# carry_lookahead_unit, summation_unit and carry_lookahead_4bit, which collided
+# with the standalone files of the same names; those copies were removed, so all
+# four files can now be listed together without a duplicate-definition error.
+#
+# carry_lookahead_4bit.v is deliberately NOT listed - the 16-bit top level does
+# not instantiate it, so it would only be dead weight in the synthesis run.
 #---------------------------------------------------------------------
 set SRC_COMMON [list timing_wrappers.v]
 
 set SRC(cla) [list carry_lookahead_16bit.v \
                    generate_propagate_unit.v \
+                   carry_lookahead_unit.v \
+                   summation_unit.v \
                    block_carrylookahead_unit.v]
 set SRC(rca) [list ripple_carry_16bit.v]
 set SRC(beh) [list behavioral_adder_16bit.v]

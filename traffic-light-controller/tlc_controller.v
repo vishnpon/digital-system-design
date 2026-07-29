@@ -1,23 +1,9 @@
 `timescale 1ns / 1ps
 `default_nettype none
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 12/01/2025 11:42:47 AM
-// Design Name: 
+// Engineer: Vishnupriya Ponnam
 // Module Name: tlc_controller_ver1
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
+// Description: top-level controller wiring reset synchronizer, 32-bit timing counter and tlcfsm to the LEDs
 //////////////////////////////////////////////////////////////////////////////////
 
 

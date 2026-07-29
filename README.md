@@ -30,7 +30,7 @@ A 16-bit two-level carry lookahead adder that computes all carry signals in para
 
 - **Architecture:** modular design using a generate/propagate unit, a carry lookahead unit, block carry-lookahead units, and a summation unit — connected structurally at the top level
 - **Performance:** The two-level CLA structure reduces carry-chain depth from N gate levels (ripple carry) to log(N) levels. Four BCLAUs compute within-block carries in parallel; one CLAU resolves the four block carries (C4, C8, C12, C16) simultaneously. Post-synthesis timing pending.
-- **Verification:** self-checking testbench (`tb_cla16.sv`) — 20,160 vectors across directed edge cases, carry-propagation sweeps at the block boundaries, and randomized comparison against a behavioral reference. PASS, 0 failures. Simulated with Cadence Xcelium 25.03
+- **Verification:** self-checking testbench (`tb_cla16.sv`) — 20,160 vectors across directed edge cases, carry-propagation sweeps at the block boundaries, and randomized comparison against a behavioral reference. PASS, 0 failures. Simulated with Cadence Xcelium 25.03 (via EDA Playground)
 
 ---
 
@@ -60,4 +60,4 @@ An FSM-based traffic light controller for a highway and farm road intersection, 
 | **FPGA Board** | Digilent ZYBO Z7-10 |
 | **HDL** | Verilog (Xilinx) |
 | **Toolchain** | Vivado Design Suite |
-| **Simulation** | Vivado XSim |
+| **Simulation** | Vivado XSim; Cadence Xcelium 25.03 (via EDA Playground) for `tb_cla16.sv` |

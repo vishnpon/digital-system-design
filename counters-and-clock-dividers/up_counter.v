@@ -1,23 +1,9 @@
 `timescale 1ns / 1ps
 `default_nettype none
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 11/03/2025 12:34:03 PM
-// Design Name: 
-// Module Name: up_counter
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
+// Engineer: Vishnupriya Ponnam
+// Module Name: up_counter (with Three_bit_counter submodule)
+// Description: 3-bit up counter built from chained half adders with enable and reset
 //////////////////////////////////////////////////////////////////////////////////
 
 

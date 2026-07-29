@@ -1,26 +1,9 @@
 `timescale 1ns / 1ps
 `default_nettype none
 //////////////////////////////////////////////////////////////////////////////////
-// Company:
-// Engineer:
-//
-// Create Date: 12/01/2025 11:16:01 AM
-// Design Name:
+// Engineer: Vishnupriya Ponnam
 // Module Name: tlcfsm_modified
-// Project Name:
-// Target Devices:
-// Tool Versions:
-// Description: Modified Traffic Light Controller FSM with farm road sensor.
-//              Extends the original 6-state FSM with 2 additional states:
-//              S6 - holds highway green until farm traffic is detected (farmSensor high)
-//              S7 - extends farm green while farmSensor is high (max 15 extra seconds)
-//
-// Dependencies:
-//
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-//
+// Description: 8-state traffic light FSM; S6 holds highway green for the farm sensor, S7 extends farm green
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -62,7 +45,7 @@ module tlcfsm_modified(
         case(state)
             //state s0 - both lights red (1 sec)
             S0: begin
-                if(Count == sec1)
+                if(Count >= sec1)
                     nextState = S1; //move to highway green
                 else
                     nextState = S0;
@@ -70,7 +53,7 @@ module tlcfsm_modified(
 
             //state s1 - highway green, farm red (30 sec min)
             S1: begin
-                if(Count == sec30)
+                if(Count >= sec30)
                     nextState = S6; //move to extended green state
                 else
                     nextState = S1;
@@ -86,7 +69,7 @@ module tlcfsm_modified(
 
             //state s2 - highway yellow, farm red (3 sec)
             S2: begin
-                if(Count == sec3)
+                if(Count >= sec3)
                     nextState = S3; //move to both red transition
                 else
                     nextState = S2;
@@ -94,7 +77,7 @@ module tlcfsm_modified(
 
             //state s3 - both red (1 sec)
             S3: begin
-                if(Count == sec1)
+                if(Count >= sec1)
                     nextState = S4; //move to farm green
                 else
                     nextState = S3;
@@ -102,7 +85,7 @@ module tlcfsm_modified(
 
             //state s4 - highway red, farm green (3 sec min)
             S4: begin
-                if(Count == sec3)
+                if(Count >= sec3)
                     nextState = S7; //move to extended farm green state
                 else
                     nextState = S4;
@@ -110,7 +93,7 @@ module tlcfsm_modified(
 
             //state s7 - extended farm green; while sensor high, up to 15 extra sec
             S7: begin
-                if(!farmSensor || Count == sec15)
+                if(!farmSensor || Count >= sec15)
                     nextState = S5; //car left or max time reached, go to farm yellow
                 else
                     nextState = S7;
@@ -118,7 +101,7 @@ module tlcfsm_modified(
 
             //state s5 - highway red, farm yellow (3 sec)
             S5: begin
-                if(Count == sec3)
+                if(Count >= sec3)
                     nextState = S0; //return to s0 and restart cycle
                 else
                     nextState = S5;
@@ -129,14 +112,14 @@ module tlcfsm_modified(
     //output logic for rstcount
     always @(*) begin
         case(state)
-            S0: RstCount = (Count == sec1)  ? 1'b1 : 1'b0;
-            S1: RstCount = (Count == sec30) ? 1'b1 : 1'b0;
+            S0: RstCount = (Count >= sec1)  ? 1'b1 : 1'b0;
+            S1: RstCount = (Count >= sec30) ? 1'b1 : 1'b0;
             S6: RstCount = farmSensor;  //reset when farm car detected
-            S2: RstCount = (Count == sec3)  ? 1'b1 : 1'b0;
-            S3: RstCount = (Count == sec1)  ? 1'b1 : 1'b0;
-            S4: RstCount = (Count == sec3)  ? 1'b1 : 1'b0;
-            S7: RstCount = (!farmSensor || Count == sec15) ? 1'b1 : 1'b0;
-            S5: RstCount = (Count == sec3)  ? 1'b1 : 1'b0;
+            S2: RstCount = (Count >= sec3)  ? 1'b1 : 1'b0;
+            S3: RstCount = (Count >= sec1)  ? 1'b1 : 1'b0;
+            S4: RstCount = (Count >= sec3)  ? 1'b1 : 1'b0;
+            S7: RstCount = (!farmSensor || Count >= sec15) ? 1'b1 : 1'b0;
+            S5: RstCount = (Count >= sec3)  ? 1'b1 : 1'b0;
         endcase
     end
 

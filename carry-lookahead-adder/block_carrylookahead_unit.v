@@ -1,22 +1,8 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 11/10/2025 12:11:20 PM
-// Design Name: 
+// Engineer: Vishnupriya Ponnam
 // Module Name: block_carrylookahead_unit
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
+// Description: 4-bit block CLA giving carries C1-C3 plus block generate G_star and propagate P_star
 //////////////////////////////////////////////////////////////////////////////////
 
 

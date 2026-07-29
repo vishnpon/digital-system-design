@@ -1,23 +1,9 @@
 `timescale 1ns / 1ps
 `default_nettype none
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 11/10/2025 12:32:41 PM
-// Design Name: 
+// Engineer: Vishnupriya Ponnam
 // Module Name: carry_lookahead_16bit
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
+// Description: structural 16-bit CLA built from four block CLAs and a second-level CLA unit
 //////////////////////////////////////////////////////////////////////////////////
 
 

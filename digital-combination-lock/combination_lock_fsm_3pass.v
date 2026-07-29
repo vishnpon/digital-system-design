@@ -1,25 +1,9 @@
 `timescale 1ns / 1ps
 `default_nettype none
 //////////////////////////////////////////////////////////////////////////////////
-// Company:
-// Engineer:
-//
-// Create Date: 11/17/2025 12:33:02 AM
-// Design Name:
+// Engineer: Vishnupriya Ponnam
 // Module Name: combination_lock_fsm_3pass
-// Project Name:
-// Target Devices:
-// Tool Versions:
-// Description: 3-password combination lock FSM (Experiment Part 1)
-//              Password sequence: 13 (Key1), 7 (Key2), 9 (Key1)
-//              Moore machine - output depends only on current state
-//
-// Dependencies:
-//
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-//
+// Description: Moore FSM 3-entry combination lock unlocking on 13, 7, 9
 //////////////////////////////////////////////////////////////////////////////////
 
 

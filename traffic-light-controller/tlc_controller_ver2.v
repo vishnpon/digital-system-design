@@ -1,25 +1,9 @@
 `timescale 1ns / 1ps
 `default_nettype none
 //////////////////////////////////////////////////////////////////////////////////
-// Company:
-// Engineer:
-//
-// Create Date: 12/01/2025 11:42:47 AM
-// Design Name:
+// Engineer: Vishnupriya Ponnam
 // Module Name: tlc_controller_ver2
-// Project Name:
-// Target Devices:
-// Tool Versions:
-// Description: Modified top-level Traffic Light Controller.
-//              Extends ver1 by adding a farmSensor input and synchronizer
-//              to support the 8-state tlcfsm_modified FSM.
-//
-// Dependencies: tlcfsm_modified, synchronizer
-//
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-//
+// Description: top-level controller adding a farm sensor input and synchronizer to drive tlcfsm_modified
 //////////////////////////////////////////////////////////////////////////////////
 
 
