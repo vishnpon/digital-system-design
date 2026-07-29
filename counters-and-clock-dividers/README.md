@@ -1,6 +1,8 @@
 # Up Counter with Selectable Clock Speed
 a 3-bit synchronous up counter built from half adder primitives, with a clock divider and selectable frequency output
 
+> **Attribution:** `withDebounce.v` in this project was provided as **course starter code** and was **not written by me**. Every other module here is my own work.
+
 ## Overview
 this project builds a 3-bit up counter from the ground up using half adders as the base primitive. rather than using a built-in counter, the design chains half adders together to compute the next count value combinationally, then latches it on the rising clock edge. a clock divider generates four different frequencies from the board's fast clock, and a behavioral 4-way mux lets you pick between them in real time using the switches — the count shows up across the LEDs
 
@@ -25,6 +27,7 @@ the design is made up of the following modules connected structurally at the top
 * __up_counter.v__ - 3-bit synchronous up counter with enable and reset, includes three-bit counter submodule
 * __clock_divider.v__ - divides fast clock input into 4 selectable output frequencies
 * __top_level.v__ - top-level module wiring everything together with the 4-way clock mux
+* __withDebounce.v__ - button debounce circuit — **course-provided starter code, not written by me**
 
 ## Simulation Results
 waveforms confirmed correct counting behavior at each clock speed, with enable and reset verified across all frequencies
